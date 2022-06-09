@@ -85,6 +85,7 @@ phpunit
 #-------------------------
 Vendor/**
 !Vendor/myth
+!Vendor/myth/**
 
 #-------------------------
 # IDE / Development Files
