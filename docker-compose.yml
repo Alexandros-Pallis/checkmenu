@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  php:
+    container_name: apache-php-check-menu
+    build:
+      context: .
+      dockerfile: php/dockerfile
+    restart: unless-stopped
+    ports:
+      - "801:443"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - SITE_URL=${SITE_URL}
+      - DB_NAME=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - MEMCACHED_HOST=${MEMCACHED_HOST}
+      - MEMCACHED_PORT=${MEMCACHED_PORT}
+    volumes:
+      - checkMenuApp:/var/www/html:rw
+    network_mode: bridge
+volumes:
+  checkMenuApp:
+    name: apache-php-check-menu
