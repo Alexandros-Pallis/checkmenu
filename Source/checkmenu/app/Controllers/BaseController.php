@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
@@ -37,6 +36,8 @@ abstract class BaseController extends Controller
      */
     protected $helpers = [];
 
+    protected $client;
+
     /**
      * Constructor.
      */
@@ -46,7 +47,8 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
-
+        $this->request = \Config\Services::request();
+        $this->client = \Config\Services::curlrequest();
         // E.g.: $this->session = \Config\Services::session();
     }
 }
