@@ -42,5 +42,10 @@
             "library"
          ]
       }
+   },
+   "config": {
+      "allow-plugins": {
+         "composer/installers": true
+      }
    }
 }
