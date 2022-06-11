@@ -2,9 +2,9 @@ version: '3.9'
 services:
   php:
     build:
-      context: .
-      dockerfile: php/dev.dockerfile
+      context: ../
+      dockerfile: Development/dev.dockerfile
     volumes:
-      - ./Source/checkmenu:/var/www/html
+      - ../Source/checkmenu:/var/www/html
     extra_hosts:
       - "checkmenu.local:128.0.0.2"

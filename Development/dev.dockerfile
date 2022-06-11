@@ -1,11 +1,11 @@
 
 FROM php:8.1-apache
 
-COPY certs/checkmenu.local.pem /etc/apache2/ssl/checkmenu.local.pem
+COPY Config/Certs/checkmenu.local.pem /etc/apache2/ssl/checkmenu.local.pem
 
-COPY certs/checkmenu.local-key.pem /etc/apache2/ssl/checkmenu.local-key.pem
+COPY Config/Certs/checkmenu.local-key.pem /etc/apache2/ssl/checkmenu.local-key.pem
 
-COPY apache-conf/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY Config/Apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 RUN a2enmod ssl && a2enmod headers && a2enmod rewrite
 

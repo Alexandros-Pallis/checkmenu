@@ -3,8 +3,8 @@ services:
   php:
     container_name: apache-php-check-menu
     build:
-      context: .
-      dockerfile: php/dockerfile
+      context: ../
+      dockerfile: Production/dockerfile
     restart: unless-stopped
     ports:
       - "801:443"
