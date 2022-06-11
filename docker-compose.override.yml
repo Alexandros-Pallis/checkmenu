@@ -6,5 +6,5 @@ services:
       dockerfile: php/dev.dockerfile
     volumes:
       - ./Source/checkmenu:/var/www/html
-    # extra_hosts:
-      # - "checkmenu.local:128.0.0.2"
+    extra_hosts:
+      - "checkmenu.local:128.0.0.2"

@@ -8,11 +8,15 @@
             "name": "Check Menu Listen for xdebug",
             "type": "php",
             "request": "launch",
-            "hostname": "0.0.0.0",
             "port": 9003,
+            "hostname": "0.0.0.0",
             "pathMappings": {
                 "/var/www/html": "${workspaceFolder}/Source/checkmenu"
-            }
+            },
+            "ignore": [
+                "**/vendor/**/*.php"
+            ],
+            "log": true
         },
         {
             "name": "Launch currently open script",

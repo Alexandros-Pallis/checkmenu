@@ -1,9 +1,9 @@
 
 FROM php:8.1-apache
 
-# COPY certs/checkmenu.local.pem /etc/apache2/ssl/checkmenu.local.pem
+COPY certs/checkmenu.local.pem /etc/apache2/ssl/checkmenu.local.pem
 
-# COPY certs/checkmenu.local-key.pem /etc/apache2/ssl/checkmenu.local-key.pem
+COPY certs/checkmenu.local-key.pem /etc/apache2/ssl/checkmenu.local-key.pem
 
 COPY apache-conf/000-default.conf /etc/apache2/sites-available/000-default.conf
 
@@ -22,6 +22,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-COPY Development/xdebug/xdebug.ini /usr/local/bin/conf.d/docker-php-ext-xdebug.ini
+COPY Development/xdebug/xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 WORKDIR /var/www/html
