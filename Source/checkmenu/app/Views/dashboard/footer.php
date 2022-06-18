@@ -1,1 +1,2 @@
-<h1>Dashboard footer</h1>
+</body>
+</html>
